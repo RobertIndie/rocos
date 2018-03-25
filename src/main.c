@@ -1,4 +1,5 @@
 #include "debug.h"
+#include "task.h"
 
 int demoTask()
 {
@@ -8,6 +9,9 @@ int demoTask()
 int main()
 {
     print("Welcome to Rocos!\n");
-    error("Error Test");
+    Task taskManager;
+    taskManager.taskId = 0;
+    taskManager.run = &TaskManager;
+    taskManager.run();
     return 0;
 }
